@@ -1,0 +1,29 @@
+Configuration 1:
+    - Number of hidden layers: 2
+    - Size of each hidden layers: 64
+    - buffer_capacity: 10000
+    - batch_size: 32
+
+Configuration 2:
+    - Number of hidden layers: 2
+    - Size of each hidden layers: 128
+    - buffer_capacity: 10000
+    - batch_size: 32
+
+Configuration 3:
+    - Number of hidden layers: 3
+    - Size of each hidden layers: 64
+    - buffer_capacity: 9000
+    - batch_size: 64
+
+Configuration 4:
+    - Number of hidden layers: 3
+    - Size of each hidden layers: 128
+    - buffer_capacity: 9000
+    - batch_size: 64
+
+Configuration 5:
+    - Number of hidden layers: 1
+    - Size of each hidden layers: 256
+    - buffer_capacity: 10000
+    - batch_size: 32
