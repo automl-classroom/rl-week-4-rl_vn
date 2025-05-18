@@ -242,7 +242,8 @@ class DQNAgent(AbstractAgent):
 
         # TODO: compute TD target with frozen network
         with torch.no_grad():
-            target = r + self.gamma * torch.argmax(self.target_q.forward(s_next))
+            next_q_values = self.target_q.forward(s_next).max(dim=1)[0]
+            target = r + self.gamma * next_q_values * (1 - mask)
 
         loss = nn.MSELoss()(pred, target)
 
@@ -310,11 +311,11 @@ class DQNAgent(AbstractAgent):
         plt.plot(frames, mean_rewards)
         plt.xlabel("Frames")
         plt.ylabel("Average Reward")
-        plt.title("Training Curve - Config 5")
+        plt.title("Training Curve - Config 3")
 
         # Save the plot
         plot_file = os.path.join(
-            os.path.dirname(__file__), "plots", "Training_curve_Config_5.png"
+            os.path.dirname(__file__), "plots", "Training_curve_Config_3.png"
         )
         plt.savefig(plot_file)
         plt.close()
